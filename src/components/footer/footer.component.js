@@ -7,7 +7,7 @@ class Footer extends Component {
         return (
             <Container>
                 <Wrapper>
-                    Copyright 2018 MR
+                    Copyright &copy; 2018 MR
                 </Wrapper>
             </Container>
         );

@@ -9,5 +9,6 @@ export const Container = styled.div`
     
    & > div {
     border-top: 1px solid ${colors.light};
+    padding: 5px 0;
    }
 `;
