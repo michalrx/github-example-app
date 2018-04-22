@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { githubConfig } from "../../config/config";
 
 // Styles
-import { Container } from './userDetails.style';
+import { Container, Content, ContentTop, ContentLeft, ContentCenter, ContentRight } from './userDetails.style';
 
 import { Wrapper } from '../../utils/styles/global.style';
 
@@ -33,13 +33,33 @@ class UserDetails extends Component {
             }));
     }
 
+    componentDidUpdate() {
+        console.log('current state', this.state);
+    }
+
     render() {
+        const userDetails = this.state.details;
         return (
             <Container>
                 <Header/>
 
                 <Wrapper>
+                    <Content>
+                        <ContentTop>
+                            <span>User: {userDetails.login}</span>
+                        </ContentTop>
+                        <ContentLeft>
+                            <img src={userDetails.avatar_url} />
+                        </ContentLeft>
+                        <ContentCenter>
+                            repository url: {userDetails.repos_url}
+                        </ContentCenter>
+                        <ContentRight>
+                            email: {userDetails.email}
+                            location: {userDetails.location}
+                        </ContentRight>
                     {this.props.match.params.userLogin}
+                    </Content>
                 </Wrapper>
 
                 <Footer/>
