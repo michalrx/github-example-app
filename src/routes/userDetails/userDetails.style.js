@@ -35,3 +35,9 @@ export const ContentCenter = styled.div`
 export const ContentRight = styled.div`
     grid-area: sidebar2;
 `;
+
+export const ContentError = styled.div`
+    background: red;
+    text-align: center;
+    color: white;
+`;
