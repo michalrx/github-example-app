@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Container, UserLoginBox, UserInput, UserButton, UsersContainer } from "./home.style";
 import { Wrapper } from "../../utils/styles/global.style";
 
@@ -22,7 +24,7 @@ class Home extends Component {
         this.setState({inputValue: e.target.value});
     };
 
-    renderUsers = () => this.state.users.map((item) => <div>{item}</div>);
+    renderUsers = () => this.state.users.map((item) => <div><Link to={`/user/${item}`}>{item}</Link></div>);
 
     render() {
         return (
